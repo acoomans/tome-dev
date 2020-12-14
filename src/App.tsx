@@ -34,7 +34,7 @@ class App extends React.Component {
                                     </div>
                                     <div className="Box Chart">
                                         <div className="Chart">
-                                            <img src="images/barchart.png"/>
+                                            <img src="tome/images/barchart.png"/>
                                         </div>
                                     </div>
                                 </div>
