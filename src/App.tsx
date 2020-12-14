@@ -24,7 +24,7 @@ class App extends React.Component {
                             .filter((paragraph: string) => { return paragraph.trim().length })
                             .map((paragraph: string) => {
 
-                            if (paragraph.includes("barchart")) { // bartchart page
+                            if (paragraph.includes("@barchart")) { // bartchart page
                                 return <div className="Page Barchart">
                                     <div className="Box Text">
                                         <div className="Text">
