@@ -7,6 +7,12 @@ class App extends React.Component {
         text: ""
     }
 
+    componentDidUpdate = (prevProps: {}, prevState: {}, snapshot: {}) => {
+        // for typescript
+        let f = (window as any).webgl_main_loop;
+        f();
+    }
+
     render = () => {
         return (
             <div className="App">
@@ -35,6 +41,13 @@ class App extends React.Component {
                                         <div className="Chart">
                                             <img src="tome/images/barchart.png"/>
                                         </div>
+                                    </div>
+                                </div>
+
+                            } else if (paragraph.includes("@cube")) { // cube page
+                                return <div className="Page Cube">
+                                    <div className="Box Cube">
+                                        <canvas className="Cube" id="glcanvas"></canvas>
                                     </div>
                                 </div>
 
