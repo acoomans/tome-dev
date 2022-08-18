@@ -24,11 +24,11 @@ class App extends React.Component {
                             .filter((paragraph: string) => { return paragraph.trim().length })
                             .map((paragraph: string) => {
 
-                            if (paragraph.includes("@barchart")) { // bartchart page
+                            if (paragraph.includes("@chart")) { // bartchart page
                                 return <div className="Page Barchart">
                                     <div className="Box Text">
                                         <div className="Text">
-                                            {paragraph.replace("@barchart", "")}
+                                            {paragraph.replace("@chart", "")}
                                         </div>
                                     </div>
                                     <div className="Box Chart">
@@ -37,7 +37,25 @@ class App extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-
+                            } else if (paragraph.includes("@giphy theoffice")) {
+                                return <div className="Page Giphy">
+                                    <div className="Box Text">
+                                        <div className="Text">
+                                            {paragraph.replace("@giphy theoffice", "")}
+                                        </div>
+                                    </div>
+                                    <div className="Box Giphy">
+                                        <div className="Giphy">
+                                            <img src="tome/images/giphy.gif"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            } else if (paragraph.startsWith("#")) {
+                                return <div className="Page Box Text">
+                                    <h1 className="Text">
+                                        {paragraph.replace("#", "")}
+                                    </h1>
+                                </div>
                             } else { // text page
                                 return <div className="Page Box Text">
                                     <p className="Text">
